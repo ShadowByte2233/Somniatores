@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d0d1a"/>
+      <stop offset="100%" stop-color="#1a1a3e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <!-- Hills silhouette -->
+  <ellipse cx="300" cy="720" rx="520" ry="320" fill="#111128" opacity="0.7"/>
+  <ellipse cx="900" cy="760" rx="620" ry="360" fill="#0f0f23" opacity="0.6"/>
+  <!-- Stars -->
+  <circle cx="100" cy="80"  r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="250" cy="40"  r="1"   fill="#fff" opacity="0.4"/>
+  <circle cx="420" cy="100" r="2"   fill="#fff" opacity="0.5"/>
+  <circle cx="700" cy="60"  r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="900" cy="30"  r="1"   fill="#fff" opacity="0.4"/>
+  <circle cx="1100" cy="90" r="2"   fill="#fff" opacity="0.5"/>
+  <circle cx="1050" cy="150" r="1"  fill="#fff" opacity="0.3"/>
+  <circle cx="550" cy="120" r="1.5" fill="#fff" opacity="0.4"/>
+  <!-- Main text -->
+  <text x="600" y="260" font-family="Arial,sans-serif" font-size="72" font-weight="bold" fill="#ffffff" text-anchor="middle" opacity="0.95">HILLBEATS</text>
+  <text x="600" y="315" font-family="Arial,sans-serif" font-size="22" fill="#c9a74d" text-anchor="middle" letter-spacing="6">SOUND DER HÜGEL</text>
+</svg>
