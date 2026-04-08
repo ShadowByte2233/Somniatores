@@ -10,7 +10,6 @@
 const TRANSLATIONS = {
   de: {
     'nav.home':               'Startseite',
-    'nav.release':            'Release',
     'nav.releases':           'Releases',
     'nav.about':              'Über uns',
     'nav.media':              'Media',
@@ -22,7 +21,7 @@ const TRANSLATIONS = {
     'hero.booking':           'Booking',
     'release.title':          'Aktueller Release',
     'release.tag':            'Neuerscheinung',
-    'release.name':           '„Gipfeltreffen" – EP',
+    'release.name':           '„Wake up call" – EP',
     'release.desc':           'Vier Tracks zwischen Indie, Electronic und Live-Feeling – aufgenommen in den Hügeln über der Stadt.',
     'release.spotify':        'Spotify',
     'release.apple':          'Apple Music',
@@ -60,7 +59,6 @@ const TRANSLATIONS = {
   },
   en: {
     'nav.home':               'Home',
-    'nav.release':            'Release',
     'nav.releases':           'Releases',
     'nav.about':              'About',
     'nav.media':              'Media',
@@ -72,8 +70,8 @@ const TRANSLATIONS = {
     'hero.booking':           'Booking',
     'release.title':          'Latest Release',
     'release.tag':            'New Release',
-    'release.name':           '"Summit Meeting" – EP',
-    'release.desc':           'Four tracks blending indie, electronic and live vibes – recorded in the hills above the city.',
+    'release.name':           '"Wake up call" – EP',
+    'release.desc':           'a track for a better world.',
     'release.spotify':        'Spotify',
     'release.apple':          'Apple Music',
     'release.youtube':        'YouTube',
