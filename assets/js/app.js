@@ -22,7 +22,7 @@ const TRANSLATIONS = {
     'release.title':          'Aktueller Release',
     'release.tag':            'Neuerscheinung',
     'release.name':           '„Wake up call" – EP',
-    'release.desc':           'Vier Tracks zwischen Indie, Electronic und Live-Feeling – aufgenommen in den Hügeln über der Stadt.',
+    'release.desc':           'Ein Lied über eine bessere Welt.',
     'release.spotify':        'Spotify',
     'release.apple':          'Apple Music',
     'release.youtube':        'YouTube',
