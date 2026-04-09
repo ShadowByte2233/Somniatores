@@ -12,7 +12,7 @@ const TRANSLATIONS = {
     'nav.home':               'Startseite',
     'nav.releases':           'Releases',
     'nav.about':              'Über uns',
-    'nav.media':              'Impresum',
+    'nav.media':              'Impressum',
     'nav.tour':               'Tour',
     'nav.contact':            'Kontakt',
     'hero.title':             'Somniatores',
