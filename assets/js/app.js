@@ -62,7 +62,7 @@ const TRANSLATIONS = {
     'nav.home':               'Home',
     'nav.releases':           'Releases',
     'nav.about':              'About',
-    'nav.media':              'imprint',
+    'nav.media':              'Impressum',
     'nav.tour':               'Tour',
     'nav.contact':            'Contact',
     'hero.title':             'Somniatores',
@@ -146,6 +146,13 @@ function applyLanguage(lang) {
 
   document.querySelectorAll('#lang-list [data-lang]').forEach(opt => {
     opt.setAttribute('aria-selected', String(opt.getAttribute('data-lang') === lang));
+  });
+
+  // Show/hide bilingual blocks (used on impressum page)
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    if (el.closest('#lang-list')) return; // skip the language switcher options
+    if (el.getAttribute('data-lang') === lang) el.removeAttribute('hidden');
+    else el.setAttribute('hidden', '');
   });
 
   localStorage.setItem('hillbeats-lang', lang);

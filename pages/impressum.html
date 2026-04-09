@@ -1,131 +1,130 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>Impressum | HillBeats</title>
-
-  <!-- Seite liegt unter /pages, daher ../assets/... -->
-  <link rel="stylesheet" href="../assets/css/style.css" />
-
-  <style>
-    .page-wrap { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-    .langbar { display:flex; gap:10px; justify-content:flex-end; margin-bottom: 14px; }
-    .langbar button {
-      padding: 8px 12px;
-      border-radius: 10px;
-      border: 1px solid #3a3a3a;
-      background: #1a1a1a;
-      color: #fff;
-      cursor: pointer;
-    }
-    .langbar button[aria-pressed="true"] { border-color: #ff4500; }
-    h1 { margin: 0 0 18px; font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
-    .card {
-      border: 1px solid #2a2a2a;
-      border-radius: 14px;
-      background: rgba(0,0,0,0.35);
-      padding: 18px;
-      line-height: 1.55;
-    }
-    .muted { color: #cfcfcf; }
-    a { color: inherit; }
-    a:focus-visible { outline: 2px solid #ff4500; outline-offset: 2px; border-radius: 6px; }
-  </style>
+  <link rel="icon" type="image/png" href="../assets/img/band_logo.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/app.js" defer></script>
 </head>
-
 <body>
-  <div class="page-wrap">
-    <div class="langbar" aria-label="Language switch">
-      <button id="btn-de" type="button">DE</button>
-      <button id="btn-en" type="button">EN</button>
-    </div>
 
-    <h1 data-lang="de">Impressum</h1>
-    <h1 data-lang="en" hidden>Legal Notice</h1>
+<!-- PROJECT NOTICE (FFH Mediencamp) -->
+<div class="project-notice" role="note">
+  Ein Projekt des FFH Mediencamps.
+</div>
 
-    <div class="card">
-      <!-- Deutsch -->
-      <div data-lang="de">
-        <p><strong>Institut für Medienpädagogik und Kommunikation Hessen e.V.</strong></p>
-        <p>
-          Forstmeisterstraße 11<br />
-          64285 Darmstadt<br />
-          Deutschland
-        </p>
-        <p>
-          Tel.: 06151/3605687<br />
-          E-Mail: <a href="mailto:muk@muk-hessen.de">muk@muk-hessen.de</a>
-        </p>
-        <p>
-          <strong>Verantwortlich:</strong><br />
-          1. Vorsitzender Michael Siebel
-        </p>
-        <p class="muted">
-          Eintragung im Vereinsregister<br />
-          Registergericht: Amtsgericht Darmstadt<br />
-          Registernummer: VR 84172
-        </p>
-      </div>
-
-      <!-- Englisch -->
-      <div data-lang="en" hidden>
-        <p><strong>Institute for Media Education and Communication Hesse (registered association)</strong></p>
-        <p>
-          Forstmeisterstraße 11<br />
-          64285 Darmstadt<br />
-          Germany
-        </p>
-        <p>
-          Phone: +49 6151 3605687<br />
-          Email: <a href="mailto:muk@muk-hessen.de">muk@muk-hessen.de</a>
-        </p>
-        <p>
-          <strong>Responsible:</strong><br />
-          Chairman (1st chair): Michael Siebel
-        </p>
-        <p class="muted">
-          Registered in the association register<br />
-          Register court: Local Court (Amtsgericht) Darmstadt<br />
-          Registration number: VR 84172
-        </p>
-      </div>
+<!-- NAVIGATION -->
+<nav id="navbar" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="../home.html#hero" class="nav-logo" aria-label="Somniatores – Startseite">
+      <img src="../assets/img/band_logo.png" alt="Somniatores Logo">
+    </a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links" data-i18n-aria="nav.burgerLabel">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="../home.html#hero"  data-i18n="nav.home">Startseite</a></li>
+      <li><a href="releases.html"      data-i18n="nav.releases">Releases</a></li>
+      <li><a href="about.html"         data-i18n="nav.about">Über uns</a></li>
+      <li><a href="impressum.html"     data-i18n="nav.media">Impressum</a></li>
+    </ul>
+    <!-- Language dropdown -->
+    <div class="lang-dropdown" id="lang-dropdown">
+      <button class="lang-btn" id="lang-btn"
+              aria-haspopup="listbox" aria-expanded="false"
+              aria-label="Sprache wählen" data-i18n-aria="lang.label">
+        <span id="lang-current">DE</span>
+        <svg aria-hidden="true" width="12" height="8" viewBox="0 0 12 8" focusable="false">
+          <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <ul class="lang-list" id="lang-list" role="listbox" aria-label="Sprache">
+        <li role="option" data-lang="de" aria-selected="true"  tabindex="0">🇩🇪 DE</li>
+        <li role="option" data-lang="en" aria-selected="false" tabindex="0">🇬🇧 EN</li>
+      </ul>
     </div>
   </div>
+</nav>
 
-  <script>
-    (function () {
-      const btnDe = document.getElementById("btn-de");
-      const btnEn = document.getElementById("btn-en");
-      const blocks = Array.from(document.querySelectorAll("[data-lang]"));
+<!-- IMPRESSUM -->
+<main>
+  <section id="impressum">
+    <div class="container">
+      <h2 class="section-title" data-lang="de">Impressum</h2>
+      <h2 class="section-title" data-lang="en" hidden>Legal Notice</h2>
 
-      function setLang(lang) {
-        localStorage.setItem("lang", lang);
-        document.documentElement.lang = lang === "en" ? "en" : "de";
+      <div class="release-card reveal" style="max-width: 700px;">
+        <!-- Deutsch -->
+        <div class="release-info" data-lang="de">
+          <p><strong>Institut für Medienpädagogik und Kommunikation Hessen e.V.</strong></p>
+          <p>
+            Forstmeisterstraße 11<br>
+            64285 Darmstadt<br>
+            Deutschland
+          </p>
+          <p>
+            Tel.: 06151/3605687<br>
+            E-Mail: <a href="mailto:muk@muk-hessen.de">muk@muk-hessen.de</a>
+          </p>
+          <p>
+            <strong>Verantwortlich:</strong><br>
+            1. Vorsitzender Michael Siebel
+          </p>
+          <p style="color: var(--color-text-muted);">
+            Eintragung im Vereinsregister<br>
+            Registergericht: Amtsgericht Darmstadt<br>
+            Registernummer: VR 84172
+          </p>
+        </div>
 
-        blocks.forEach(el => {
-          const isMatch = el.getAttribute("data-lang") === lang;
-          if (isMatch) el.removeAttribute("hidden");
-          else el.setAttribute("hidden", "");
-        });
+        <!-- Englisch -->
+        <div class="release-info" data-lang="en" hidden>
+          <p><strong>Institute for Media Education and Communication Hesse (registered association)</strong></p>
+          <p>
+            Forstmeisterstraße 11<br>
+            64285 Darmstadt<br>
+            Germany
+          </p>
+          <p>
+            Phone: +49 6151 3605687<br>
+            Email: <a href="mailto:muk@muk-hessen.de">muk@muk-hessen.de</a>
+          </p>
+          <p>
+            <strong>Responsible:</strong><br>
+            Chairman (1st chair): Michael Siebel
+          </p>
+          <p style="color: var(--color-text-muted);">
+            Registered in the association register<br>
+            Register court: Local Court (Amtsgericht) Darmstadt<br>
+            Registration number: VR 84172
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-        btnDe.setAttribute("aria-pressed", String(lang === "de"));
-        btnEn.setAttribute("aria-pressed", String(lang === "en"));
-      }
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="../assets/img/Logo_Huegel.jpeg" alt="HillBeats Logo">
+        <p class="footer-slogan" data-i18n="footer.slogan">Sound der Hügel</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="../home.html#hero"  data-i18n="nav.home">Startseite</a>
+        <a href="releases.html"      data-i18n="nav.releases">Releases</a>
+        <a href="about.html"         data-i18n="nav.about">Über uns</a>
+        <a href="impressum.html"     data-i18n="nav.media">Impressum</a>
+      </nav>
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 HillBeats. Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>
 
-      function getInitialLang() {
-        const urlLang = new URLSearchParams(location.search).get("lang");
-        if (urlLang === "de" || urlLang === "en") return urlLang;
-        const saved = localStorage.getItem("lang");
-        if (saved === "de" || saved === "en") return saved;
-        return (navigator.language || "").toLowerCase().startsWith("de") ? "de" : "en";
-      }
-
-      btnDe.addEventListener("click", () => setLang("de"));
-      btnEn.addEventListener("click", () => setLang("en"));
-      setLang(getInitialLang());
-    })();
-  </script>
 </body>
 </html>
