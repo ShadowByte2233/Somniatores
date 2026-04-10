@@ -26,7 +26,7 @@ const TRANSLATIONS = {
     'release.spotify':        'Spotify',
     'release.apple':          'Apple Music',
     'release.youtube':        'YouTube',
-    'Amazon Music':           'Amazon Music' 
+    'Amazon Music':           'Amazon Music',
     'releases.title':         'Releases',
     'demo.title':             'Demos',
     'releases.tag':           'Neuerscheinung',
@@ -79,7 +79,7 @@ const TRANSLATIONS = {
     'release.spotify':        'Spotify',
     'release.apple':          'Apple Music',
     'release.youtube':        'YouTube',
-    'releases.amazonmusic':   'Amazon Music' 
+    'releases.amazonmusic':   'Amazon Music',
     'releases.title':         'Releases',
     'demo.title':             'Demos',
     'releases.tag':           'New Release',
