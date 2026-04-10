@@ -5,6 +5,19 @@
 'use strict';
 
 // ============================================================
+// Page-enter animation
+// Marks <html> with .js so the CSS animation is opt-in,
+// then triggers the slide-in/fade-in on next paint.
+// ============================================================
+document.documentElement.classList.add('js');
+document.body.classList.add('page-enter');
+requestAnimationFrame(function () {
+  requestAnimationFrame(function () {
+    document.body.classList.add('page-enter--ready');
+  });
+});
+
+// ============================================================
 // Translations
 // ============================================================
 const TRANSLATIONS = {

@@ -603,6 +603,22 @@ footer {
 .reveal:nth-child(4) { transition-delay: 0.3s; }
 
 /* =========================================================
+   PAGE ENTER ANIMATION (global, all pages)
+   Only active when JS is available (.js on <html>).
+   Falls back to fully visible if JS fails.
+   ========================================================= */
+html.js body.page-enter {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+html.js body.page-enter.page-enter--ready {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 450ms ease, transform 450ms ease;
+}
+
+/* =========================================================
    REDUCED MOTION
    ========================================================= */
 @media (prefers-reduced-motion: reduce) {
@@ -611,4 +627,11 @@ footer {
   .btn, .media-card, .release-card, .tour-item { transition: none; }
   .lang-btn svg { transition: none; }
   .hero-bg-img { transform: none !important; will-change: auto; }
+  /* Disable page-enter animation */
+  html.js body.page-enter,
+  html.js body.page-enter.page-enter--ready {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
