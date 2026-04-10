@@ -233,7 +233,13 @@ ul  { list-style: none; }
   overflow: hidden;
 }
 .hero-bg { position: absolute; inset: 0; }
-.hero-bg-img { width: 100%; height: 100%; object-fit: cover; }
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center center;
+  will-change: transform;
+}
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -537,6 +543,49 @@ footer {
 .footer-copy        { font-size: 0.8rem; color: var(--color-text-muted); }
 
 /* =========================================================
+   BAND SECTION
+   ========================================================= */
+.band-section { padding: 5rem 0; }
+
+.band-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.band-photo {
+  width: 100%;
+  max-width: 480px;
+  border-radius: calc(var(--radius) * 2);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+.band-desc {
+  max-width: 700px;
+  text-align: center;
+}
+.band-desc p {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+@media (min-width: 900px) {
+  .band-intro {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+  .band-photo {
+    max-width: 360px;
+    flex-shrink: 0;
+  }
+  .band-desc { text-align: left; }
+}
+
+/* =========================================================
    SCROLL-REVEAL ANIMATIONS
    ========================================================= */
 .reveal {
@@ -561,4 +610,5 @@ footer {
   .reveal { opacity: 1; transform: none; transition: none; }
   .btn, .media-card, .release-card, .tour-item { transition: none; }
   .lang-btn svg { transition: none; }
+  .hero-bg-img { transform: none !important; will-change: auto; }
 }

@@ -61,6 +61,7 @@ const TRANSLATIONS = {
     'nav.privacy':            'Datenschutz',
     'nav.burgerLabel':        'Menü öffnen',
     'lang.label':             'Sprache wählen',
+    'band.title':             'Die Band',
   },
   en: {
     'nav.home':               'Home',
@@ -115,6 +116,7 @@ const TRANSLATIONS = {
     'nav.privacy':            'Privacy Policy',
     'nav.burgerLabel':        'Open menu',
     'lang.label':             'Select language',
+    'band.title':             'The Band',
   },
 };
 
@@ -302,6 +304,33 @@ function initSmoothScroll() {
 }
 
 // ============================================================
+// Hero zoom on scroll (requestAnimationFrame-driven)
+// ============================================================
+function initHeroZoom() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const hero   = document.getElementById('hero');
+  const heroBg = hero ? hero.querySelector('.hero-bg-img') : null;
+  if (!hero || !heroBg) return;
+
+  const MAX_SCALE_INCREASE = 0.12;
+  let ticking = false;
+
+  function updateZoom() {
+    const progress = Math.min(window.scrollY / hero.offsetHeight, 1);
+    heroBg.style.transform = 'scale(' + (1 + progress * MAX_SCALE_INCREASE) + ')';
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(updateZoom);
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+// ============================================================
 // Init
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -313,4 +342,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initNewsletter();
   initSmoothScroll();
+  initHeroZoom();
 });
