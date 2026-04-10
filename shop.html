@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Merch – Somniatores</title>
+  <meta name="description" content="Somniatores Merch – Produkte der Band">
+  <link rel="icon" type="image/png" href="assets/img/band_logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/app.js" defer></script>
+  <style>
+    .shop-card-title {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      text-align: center;
+    }
+    .shop-card-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: var(--color-surface);
+    }
+  </style>
+</head>
+<body>
 
+<!-- PROJECT NOTICE (FFH Mediencamp) -->
+<div class="project-notice" role="note">
+  Ein Projekt des FFH Mediencamps.
+</div>
+
+<!-- NAVIGATION -->
+<nav id="navbar" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="https://somniatores.de" class="nav-logo" aria-label="Somniatores – Startseite">
+      <img src="assets/img/band_logo.png" alt="Somniatores Logo">
+    </a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links" data-i18n-aria="nav.burgerLabel">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="https://somniatores.de" data-i18n="nav.home">Startseite</a></li>
+      <li><a href="releases"               data-i18n="nav.releases">Releases</a></li>
+      <li><a href="about"                  data-i18n="nav.about">Über uns</a></li>
+      <li><a href="shop"                   data-i18n="nav.shop" aria-current="page">Merch</a></li>
+      <li><a href="impressum"              data-i18n="nav.media">Impressum</a></li>
+    </ul>
+    <!-- Language dropdown -->
+    <div class="lang-dropdown" id="lang-dropdown">
+      <button class="lang-btn" id="lang-btn"
+              aria-haspopup="listbox" aria-expanded="false"
+              aria-label="Sprache wählen" data-i18n-aria="lang.label">
+        <span id="lang-current">DE</span>
+        <svg aria-hidden="true" width="12" height="8" viewBox="0 0 12 8" focusable="false">
+          <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <ul class="lang-list" id="lang-list" role="listbox" aria-label="Sprache">
+        <li role="option" data-lang="de" aria-selected="true"  tabindex="0">🇩🇪 DE</li>
+        <li role="option" data-lang="en" aria-selected="false" tabindex="0">🇬🇧 EN</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- SHOP -->
+<main>
+  <section id="shop">
+    <div class="container">
+      <h2 class="section-title">Merch</h2>
+
+      <div class="media-grid">
+
+        <article class="media-card reveal" aria-label="Produkt: Cup">
+          <img class="shop-card-img" src="assets/img/shop/Cup.png" alt="Somniatores Cup" loading="lazy">
+          <p class="shop-card-title">Cup</p>
+        </article>
+
+        <article class="media-card reveal" aria-label="Produkt: Poster">
+          <img class="shop-card-img" src="assets/img/shop/Poster.png" alt="Somniatores Poster" loading="lazy">
+          <p class="shop-card-title">Poster</p>
+        </article>
+
+        <article class="media-card reveal" aria-label="Produkt: Pullover">
+          <img class="shop-card-img" src="assets/img/shop/pullover.png" alt="Somniatores Pullover" loading="lazy">
+          <p class="shop-card-title">Pullover</p>
+        </article>
+
+        <article class="media-card reveal" aria-label="Produkt: T-Shirt">
+          <img class="shop-card-img" src="assets/img/shop/tshirt.png" alt="Somniatores T-Shirt" loading="lazy">
+          <p class="shop-card-title">T-Shirt</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="assets/img/Logo_Huegel.jpeg" alt="HillBeats Logo">
+        <p class="footer-slogan" data-i18n="footer.slogan">Sound der Hügel</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="https://somniatores.de"  data-i18n="nav.home">Startseite</a>
+        <a href="privacy-policy.html"     data-i18n="nav.privacy">Datenschutz</a>
+        <a href="about"                   data-i18n="nav.about">Über uns</a>
+        <a href="shop"                    data-i18n="nav.shop">Merch</a>
+        <a href="impressum"               data-i18n="nav.media">Impressum</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/somniatores_official/" class="social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@somniatores_official" class="social-link" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://open.spotify.com/intl-de/artist/24csG8EfkN8rLoIO0TDTSA?si=iWMw0ovDQzCS0gI25p4bjA&amp;nd=1&amp;dlsi=0f4ffcc7fa2b4fdd" class="social-link" target="_blank" rel="noopener noreferrer">Spotify</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 HillBeats. Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
