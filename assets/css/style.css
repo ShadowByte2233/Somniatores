@@ -592,6 +592,43 @@ footer {
   .band-desc { text-align: left; }
 }
 
+.band-videos {
+  margin-top: 2rem;
+}
+
+.band-videos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.band-videos-title {
+  margin: 0;
+}
+
+.band-videos-link {
+  text-decoration: underline;
+  color: var(--color-accent);
+  font-size: 0.95rem;
+}
+
+.band-video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.band-video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--radius);
+}
+
 /* =========================================================
    SCROLL-REVEAL ANIMATIONS
    ========================================================= */
