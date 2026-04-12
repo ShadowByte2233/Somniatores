@@ -596,16 +596,26 @@ footer {
   margin-top: 2rem;
 }
 
-.band-videos-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 12px;
+.band-videos-title {
+  margin: 0 0 12px;
 }
 
-.band-videos-title {
-  margin: 0;
+.band-videos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .band-videos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.band-video-card-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
 }
 
 .band-videos-link {
