@@ -1,135 +1,135 @@
 /* =========================================================
-   Optimiertes HillBeats x Glow Theme
+   FIXED VERSION: Layout stabil, Glow optimiert
    ========================================================= */
 
+/* --- Variablen --- */
 :root {
-  --color-bg: #08071a; /* Beibehalten laut Wunsch */
+  --color-bg: #08071a;
   --color-surface: #1a1a2e;
   --color-accent: #c9a74d;
   --color-text: #ffffff;
-  --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Seidige Transition */
+  --color-text-muted: #9090b0;
+  --color-border: #2a2a45;
+  --radius: 8px;
+  --transition-fast: all 0.2s ease;
+  --transition-smooth: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
   --glow-gradient: radial-gradient(circle farthest-side at 100% 100%, rgb(4, 100, 255), rgb(247, 14, 210) 50%, rgb(0, 163, 255));
 }
 
-/* --- Body & Background Animierter Glow --- */
+/* --- Reset & Base (Wichtig für die korrekte Ansicht) --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
+  font-family: 'Montserrat', sans-serif;
   background-color: var(--color-bg);
+  /* Hier liegen die Ellipsen im Hintergrund, ohne das Layout zu verschieben */
   background-image: 
     url("https://cdn.prod.website-files.com/69e1021539dbf0db6a90a23a/69e1021739dbf0db6a90a43b_Ellipse%20right.svg"), 
     url("https://cdn.prod.website-files.com/69e1021539dbf0db6a90a23a/69e1021739dbf0db6a90a438_Ellipse%20left.svg");
-  background-position: 100% 100%, -50% -50%;
-  background-size: auto, auto;
+  background-position: 110% 100%, -10% -10%; /* Leicht nach außen gerückt für Stabilität */
+  background-size: 50% auto, 50% auto;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Fixiert für besseren Scroll-Effekt */
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  background-attachment: fixed;
   color: var(--color-text);
   line-height: 1.6;
   overflow-x: hidden;
-  animation: bgPulse 10s ease-in-out infinite alternate;
 }
 
-@keyframes bgPulse {
-  0% { background-position: 100% 100%, -50% -50%; }
-  100% { background-position: 95% 95%, -45% -45%; }
+/* --- Container (Hält alles an seinem Platz) --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
-/* --- Verbesserte Buttons & Glow-Elemente --- */
+/* --- Glow-Elemente (Verbessert, ohne Layout-Impact) --- */
 .copy-me-button {
   position: relative;
   display: flex;
-  flex-flow: column;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 20px; /* Reduziert für bessere Usability */
+  justify-content: center;
+  gap: 1.5rem;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  z-index: 1;
 }
 
 .bg-glow {
   width: 17rem;
   height: 6rem;
-  border-radius: 100vw;
+  border-radius: 500px;
   background-image: var(--glow-gradient);
-  filter: blur(25px); /* Weicherer Glow */
-  opacity: 0.6;
+  filter: blur(40px);
+  opacity: 0.5;
   transition: var(--transition-smooth);
-  position: relative;
+  pointer-events: none; /* Verhindert, dass der Glow Klicks abfängt */
 }
 
-/* Hover-Effekt für den Glow */
 .copy-me-button:hover .bg-glow {
-  filter: blur(35px);
-  opacity: 0.9;
+  opacity: 0.8;
+  filter: blur(55px);
   transform: scale(1.1);
 }
 
-/* --- Neon-Outline Optimierung --- */
-.btn, .nav-links a, button {
-  position: relative;
+/* --- Buttons & Transitions --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
   transition: var(--transition-smooth);
-  z-index: 1;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Der "Drawn Outline" Effekt jetzt flüssiger */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Neon-Effekt fixiert: Er liegt jetzt sauber auf dem Element */
 .btn::after {
   content: "";
   position: absolute;
-  inset: -3px;
-  border-radius: 10px;
+  inset: 0;
+  border-radius: inherit;
   padding: 2px;
-  background: conic-gradient(from 0deg, transparent, var(--neon-red), transparent 60%);
+  background: conic-gradient(from 0deg, transparent, #ff2b2b, transparent 90deg);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s;
 }
 
 .btn:hover::after {
   opacity: 1;
-  animation: neonRotate 1.2s linear infinite; /* Endlose Rotation statt nur einmal */
+  animation: rotateNeon 1.5s linear infinite;
 }
 
-@keyframes neonRotate {
+@keyframes rotateNeon {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* --- Sektionen & Cards mit Glas-Effekt --- */
-.release-card, .media-card {
-  background: rgba(26, 26, 46, 0.6);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: var(--transition-smooth);
-}
-
-.release-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  border-color: var(--color-accent);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(201, 167, 77, 0.2);
-}
-
-/* --- Scroll-Reveal (Sanfter) --- */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px) scale(0.98);
-  transition: opacity 0.8s cubic-bezier(0.2, 0, 0.2, 1), 
-              transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* --- Mobile Optimierung für Glow --- */
+/* --- Responsive Fixes --- */
 @media screen and (max-width: 991px) {
-  .body {
-    background-position: 50% 150%, -100% -100%;
-    background-size: 150%, 150%;
+  body {
+    background-position: 150% 120%, -50% -20%;
+    background-size: 80% auto;
   }
   
   .bg-glow {
     width: 12rem;
-    height: 4.5rem;
+    height: 4rem;
   }
+}
+
+/* Sektionen */
+section {
+  padding: 5rem 0;
+  position: relative;
 }
